@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> First Page </title>
+  </head>
+
+<style>
+
+body{
+    background-color:lightblue;
+}
+
+form.a{
+    margin: 200px 400px;
+}
+
+</style>
+
+<body>
+
+<form class="a" name="registration" method="POST" >
+<table>
+<tr>
+    <th style="text-align:center"><h1>REGISTRATION</h1></th>
+  </tr>
+<tr><td>USERNAME:</td><td><input type="text" name="username" id="username" ></td>
+<tr><td>PASSWORD:</td><td><input type="password" name="password" id="password" ></td>
+<tr><td>
+<input type="submit" value="Login" onClick="nextpage(1)"></td>
+<tr><td><input type="submit" value="Signup" onClick="nextpage(2)"></td>
+</table>
+</form>
+
+
+<script>
+function nextpage(i){
+if(i==1){
+var inputi= document.getElementById("username");
+var passwordi=  document.getElementById("password");
+var pword=localStorage.getItem(inputi.value);
+if(passwordi.value==pword){
+document.registration.action="pro3.html";
+}
+else{
+alert("sorry you are not registered");
+document.registration.action="pro.html";
+}
+}
+if(i==2){
+document.registration.action="pro2.html";
+}
+}
+</script>
+
+</body>
+</html>

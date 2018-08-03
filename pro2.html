@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup Page</title>
+
+</head>
+<style>
+#signup{
+		position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+        }
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+	z-index: -1;
+}
+</style>
+
+<body>
+<div>
+<video autoplay muted loop id="myVideo" >
+  <source src="https://static.videezy.com/system/resources/preview2s/000/004/928/original/Snowy_Christmas_Motion_Background_4K.ogv" type="video/webm">
+</video>
+<div id="signup">
+<form  name="signup" method="POST" >
+<table>
+<tr>
+    <th><h1>SIGN UP</h1></th>
+  </tr>
+<tr><td>USERNAME:</td><td><input type="text" name="username" id="username" onfocus="this.value=''"></td>
+<tr><td>PASSWORD:</td><td><input type="password" name="password" id="password" onfocus="this.value=''"></td>
+<tr><td>EMAIL ID:</td><td><input type="email" name="email" id="email"></td>
+<tr><td>AGE:</td><td><input type="number" name="age" id="age"></td>
+<tr><td>PHONE NUMBER:</td><td><input type="tel" name="phno" id="phno"></td>
+<tr><td><input type="submit" value="Submit" onClick="storeddata()"></td>
+
+<script>
+var video = document.getElementById("myVideo");
+video.play();
+function storeddata(){
+var uname= document.getElementById("username");
+var pword=  document.getElementById("password");
+localStorage.setItem(uname.value,pword.value);
+//alert(uname.value);
+//alert(pword.value);
+//localStorage.setItem("username",uname.value);
+//localStorage.setItem("password",pword.value);
+document.signup.action="pro.html";
+}
+
+</script>
+
+</table>
+</form>
+
+</div>
+
+</div>
+</body>
+</html>
